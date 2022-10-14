@@ -3,7 +3,7 @@
 stellarView is a full-stack interactive prep tool to help developers build confidence for their next technical interview. 
 <br>
 [Live Deploy]('')
-[Backend Repository]('')
+[Backend Repository]('https://github.com/stellarview/stellarView-backend')
 <br>
 
 ## Build 
@@ -58,7 +58,7 @@ Users can log in to their personalized profile, choose from categories, and prac
 <br>
 
 
-# stellarView frontend
+# stellarView frontend to do list
 
 
 ## Components
