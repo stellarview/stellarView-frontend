@@ -28,33 +28,33 @@ Users can log in to their personalized profile, choose from categories, and prac
 <br>
 
 ### Jenna Graham (she/her)
-[LinkedIn]('https://www.linkedin.com/in/jenna-lee-graham')
+[LinkedIn](https://www.linkedin.com/in/jenna-lee-graham)
 <br>
-[GitHub]('https://github.com/jenna-graham')
+[GitHub](https://github.com/jenna-graham)
 <br>
 
 ### Kashi Tamang (they/them)
-[LinkedIn]('https://www.linkedin.com/in/kashitamang')
+[LinkedIn](https://www.linkedin.com/in/kashitamang)
 <br>
-[GitHub]('https://github.com/kashitamang')
+[GitHub](https://github.com/kashitamang)
 <br>
 
 ### Aaron Enyetu (he/him)
-[LinkedIn]('https://www.linkedin.com/in/aaron-enyetu/')
+[LinkedIn](https://www.linkedin.com/in/aaron-enyetu/)
 <br>
-[GitHub]('https://github.com/aaronEnyetu')
+[GitHub](https://github.com/aaronEnyetu)
 <br>
 
 ### Austin Han (he/him)
-[LinkedIn]('https://www.linkedin.com/in/austin-han-740a69157/')
+[LinkedIn](https://www.linkedin.com/in/austin-han-740a69157/)
 <br>
-[GitHub]('https://github.com/austinbhan')
+[GitHub](https://github.com/austinbhan)
 <br>
 
 ### Brien Thomas (he/him)
-[LinkedIn]('https://www.linkedin.com/in/brien-thomas')
+[LinkedIn](https://www.linkedin.com/in/brien-thomas)
 <br>
-[GitHub]('https://github.com/briensthomas')
+[GitHub](https://github.com/briensthomas)
 <br>
 
 
