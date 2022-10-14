@@ -6,7 +6,7 @@ import { useUser } from '../../state/UserContext.jsx';
 export default function Dashboard() {
   const user = useUser();
 
-  if (!user) return <Navigate to="/welcome" />;
+  if (!user) return <Navigate to="welcome" />;
 
   return <div className={styles.Dashboard}>Dashboard</div>;
 }

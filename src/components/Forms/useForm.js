@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
 function getValue(target) {
-    return target.type === 'checkbox' ? target.checked : target.value;
+  return target.type === 'checkbox' ? target.checked : target.value;
 }
 
 export function useForm(initialData) {
-    const [data, setData] = useState({ ...initialData });
+  const [data, setData] = useState({ ...initialData });
 
-    const handleChange = ({ target }) => {
-        setData((data) => ({
-            ...data,
-            [target.name]: getValue(target),
-        }));
-    };
+  const handleChange = ({ target }) => {
+    setData((data) => ({
+      ...data,
+      [target.name]: getValue(target),
+    }));
+  };
 
-    const reset = () => setData({ ...initialData });
-    
-    return [data, handleChange, reset];
+  const reset = () => setData({ ...initialData });
+
+  return [data, handleChange, reset];
 }
