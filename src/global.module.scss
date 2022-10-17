@@ -16,8 +16,7 @@
     --offset-color: #ca9d90;
     --tag-color: #e4fdff;
     --light-accent-color: #e5f1bf;
-    --background-color: #f9f2e7;
-    --black-color: rgb(27, 42, 48);
+    --background-color: rgb(27, 42, 48);
     --caption-color: rgb(112, 65, 65);
     --white-color: white;
 
@@ -38,7 +37,7 @@
 body {
     font-family: var(--primary-font);
     background: var(--background-color);
-    color: var(--black-color);
+    color: var(--white-color);
   }
   
   :global(.label-text) {
