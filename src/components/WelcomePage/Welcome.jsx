@@ -28,7 +28,7 @@ export default function Welcome() {
       <CustomButton
         onClick={signUpRedirect}
         style={{ 
-          background: 'rgb(83, 172, 255)',
+          background: 'midnightblue',
           color: 'white'
         }}
       >
