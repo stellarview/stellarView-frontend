@@ -36,7 +36,12 @@
 }
 body {
     font-family: var(--primary-font);
-    background: var(--background-color);
+    background: linear-gradient( rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30) ), url('../public/background.jpeg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
     color: var(--white-color);
   }
   
