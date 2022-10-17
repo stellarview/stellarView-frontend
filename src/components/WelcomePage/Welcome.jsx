@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Welcome.module.scss';
 import { useUser } from '../../state/UserContext';
 import CustomButton from '../Buttons/CustomButton';
+import standingAlien from '../../assets/standing-alien.png';
 
 export default function Welcome() {
   const user = useUser();
@@ -20,7 +21,10 @@ export default function Welcome() {
 
   return (
     <main className={styles.Welcome}>
-      <h1>Build confidence for your next technical interview...</h1>
+      <h1>
+        Build confidence for your next technical interview...
+        <img src={standingAlien}/>
+      </h1>
       <CustomButton onClick={signUpRedirect}>get started</CustomButton>
       <CustomButton onClick={signInRedirect}>
         I already have an account

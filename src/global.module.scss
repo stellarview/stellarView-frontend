@@ -43,6 +43,7 @@ body {
     background-repeat: no-repeat;
     color: var(--white-color);
     display: flex;
+    justify-content: center;
   }
   
   :global(.label-text) {
