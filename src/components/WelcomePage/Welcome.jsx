@@ -8,16 +8,23 @@ export default function Welcome() {
   const user = useUser();
   if (user) return <Navigate to="/" />;
 
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
-  const getStarted = () => { 
+  const signUpRedirect = () => {
     navigate('signup');
+  };
+
+  const signInRedirect = () => {
+    navigate('signin');
   };
 
   return (
     <main className={styles.Welcome}>
       <h1>Welcome Page</h1>
-      <CustomButton onClick={getStarted}>get started</CustomButton>
+      <CustomButton onClick={signUpRedirect}>get started</CustomButton>
+      <CustomButton onClick={signInRedirect}>
+        I already have an account
+      </CustomButton>
       <Outlet />
     </main>
   );
