@@ -22,7 +22,7 @@ export default function UserProvider({ children }) {
 
   useEffect(() => {
     verify();
-  }, []);
+  }, [user]);
 
   const setUser = (user) => {
     storeLocalUser(user);
@@ -32,6 +32,7 @@ export default function UserProvider({ children }) {
   const value = {
     user,
     setUser,
+    
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
