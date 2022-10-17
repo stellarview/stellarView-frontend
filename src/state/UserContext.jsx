@@ -14,12 +14,13 @@ const UserContext = createContext();
 export default function UserProvider({ children }) {
   const localUser = getLocalUser();
   const [user, setUserState] = useState(localUser);
+  const [loading, setLoading] = useState(true);
 
   const verify = async () => {
     const response = await verifyUser();
     setUser(response.user || null);
+    setLoading(false);
   };
-
 
   useEffect(() => {
     verify();
@@ -33,6 +34,8 @@ export default function UserProvider({ children }) {
   const value = {
     user,
     setUser,
+    loading,
+    setLoading,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
