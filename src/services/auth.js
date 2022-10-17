@@ -25,6 +25,7 @@ export async function verifyUser() {
   return response;
 }
 
+
 const USER_KEY = 'USER';
 
 export function storeLocalUser(user) {

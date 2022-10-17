@@ -1,10 +1,14 @@
 .CustomButton {
-    padding: 10px;
+    padding: 15px;
     border-radius: 10px;
     border: none;
     font-family: inherit;
-    text-transform: uppercase;font-weight: 600;
-    margin: 20px 0;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
     cursor: pointer;
+    letter-spacing: .3px;
+
 
 }

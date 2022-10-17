@@ -6,7 +6,7 @@ import {
   signOutUser,
   getLocalUser,
   storeLocalUser,
-  verifyUser,
+  verifyUser
 } from '../services/auth.js';
 
 const UserContext = createContext();
@@ -20,6 +20,7 @@ export default function UserProvider({ children }) {
     setUser(response.user || null);
   };
 
+
   useEffect(() => {
     verify();
   }, [user]);
@@ -32,7 +33,6 @@ export default function UserProvider({ children }) {
   const value = {
     user,
     setUser,
-    
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
