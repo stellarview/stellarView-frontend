@@ -16,8 +16,7 @@
     --offset-color: #ca9d90;
     --tag-color: #e4fdff;
     --light-accent-color: #e5f1bf;
-    --background-color: #f9f2e7;
-    --black-color: rgb(27, 42, 48);
+    --background-color: rgb(27, 42, 48);
     --caption-color: rgb(112, 65, 65);
     --white-color: white;
 
@@ -37,8 +36,14 @@
 }
 body {
     font-family: var(--primary-font);
-    background: var(--background-color);
-    color: var(--black-color);
+    background: linear-gradient( rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.30) ), url('../public/background.jpeg');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
   }
   
   :global(.label-text) {
