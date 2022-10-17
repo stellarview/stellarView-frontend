@@ -41,8 +41,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-
     color: var(--white-color);
+    display: flex;
   }
   
   :global(.label-text) {

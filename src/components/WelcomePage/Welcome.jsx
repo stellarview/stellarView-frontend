@@ -20,7 +20,7 @@ export default function Welcome() {
 
   return (
     <main className={styles.Welcome}>
-      <h1>Welcome Page</h1>
+      <h1>Build confidence for your next technical interview...</h1>
       <CustomButton onClick={signUpRedirect}>get started</CustomButton>
       <CustomButton onClick={signInRedirect}>
         I already have an account

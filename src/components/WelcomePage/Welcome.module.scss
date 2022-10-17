@@ -1,5 +1,10 @@
 .Welcome {
-    display: grid;
-    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    
 
+    h1 {
+        font-size: 2rem;
+    }
 }
