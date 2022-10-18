@@ -7,13 +7,13 @@ import iconAbout from '../../assets/icon_about.png';
 export default function Navigation() {
   return (
     <nav className={styles.Navigation}>
-      <NavLink to="">
+      <NavLink to="" alt="home" title="home">
         <img src={iconHome}/>
       </NavLink>
-      <NavLink to="profile"> 
+      <NavLink to="profile" alt="profile" title="profile"> 
         <img src={iconProfile}/>
       </NavLink>
-      <NavLink to="about">
+      <NavLink to="about" alt="about" title="about">
         <img src={iconAbout}/>
       </NavLink>
     </nav>
