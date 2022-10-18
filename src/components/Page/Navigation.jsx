@@ -4,7 +4,7 @@ import styles from './Navigation.module.scss';
 export default function Navigation() {
   return (
     <nav className={styles.Navigation}>
-      <NavLink to="home">
+      <NavLink to="">
         <span className="material-symbols-outlined">home</span>
       </NavLink>
       <NavLink to="profile"> 
