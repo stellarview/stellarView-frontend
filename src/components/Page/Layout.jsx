@@ -2,6 +2,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useUser } from '../../state/UserContext.jsx';
 import Header from './Header.jsx';
 import styles from './Layout.module.scss';
+import Footer from './Footer.jsx';
 
 export default function Layout() {
   const user = useUser();
@@ -13,6 +14,7 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
+      <Footer />
     </div>
   );
 }

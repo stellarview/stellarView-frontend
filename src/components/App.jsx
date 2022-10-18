@@ -15,6 +15,8 @@ import Dashboard from './Dashboard/Dashboard';
 import ProtectedRoute from './WelcomePage/ProtectedRoutes';
 import QuizProvider from '../state/QuizContext';
 import Quiz from '../Quiz/Quiz';
+import AboutPage from './AboutPage/AboutPage';
+import ProfilePage from './ProfilePage/ProfilePage';
 
 export default function App() {
   return (

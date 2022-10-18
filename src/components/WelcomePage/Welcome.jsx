@@ -23,10 +23,22 @@ export default function Welcome() {
     <main className={styles.Welcome}>
       <h1>
         Build confidence for your next technical interview...
-        <img src={standingAlien}/>
+        <img src={standingAlien} />
       </h1>
-      <CustomButton onClick={signUpRedirect}>get started</CustomButton>
-      <CustomButton onClick={signInRedirect}>
+      <CustomButton
+        onClick={signUpRedirect}
+        style={{
+          backgroundColor: 'midnightblue',
+          color: 'white'
+        }}
+        alt="Get Started" 
+        title="Get Started">
+        get started
+      </CustomButton>
+      <CustomButton alt="I already have an account" 
+        title="I already have an account"
+        onClick={signInRedirect}
+        style={{ color: 'midnightblue' }}>
         I already have an account
       </CustomButton>
       <Outlet />
