@@ -10,6 +10,8 @@ export default function Header() {
   };  
 
   return <header className={styles.Header}>
-    <FormButton onClick={handleSignOut}>Sign Out</FormButton>
+    <FormButton onClick={handleSignOut} alt="Sign Out" title="Sign Out">
+      Sign Out
+    </FormButton>
   </header>;
 }

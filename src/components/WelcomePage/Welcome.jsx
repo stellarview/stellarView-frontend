@@ -30,10 +30,13 @@ export default function Welcome() {
         style={{
           backgroundColor: 'midnightblue',
           color: 'white'
-        }}>
+        }}
+        alt="Get Started" 
+        title="Get Started">
         get started
       </CustomButton>
-      <CustomButton
+      <CustomButton alt="I already have an account" 
+        title="I already have an account"
         onClick={signInRedirect}
         style={{ color: 'midnightblue' }}>
         I already have an account
