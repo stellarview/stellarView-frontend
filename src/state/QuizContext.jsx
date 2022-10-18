@@ -4,7 +4,7 @@ const QuizContext = createContext();
 
 export default function QuizProvider({ children }) {
   const [category, setCategory] = useState('');
-  const [quizQuestions, setQuizQuestions] = useState('');
+  const [quizQuestions, setQuizQuestions] = useState([]);
 
   const value = {
     category,
