@@ -5,13 +5,13 @@ export default function Navigation() {
   return (
     <nav className={styles.Navigation}>
       <NavLink to="">
-        <span className="material-symbols-outlined">home</span>
+        home
       </NavLink>
       <NavLink to="profile"> 
-        <span className="material-symbols-outlined">account_circle</span>
+        profile
       </NavLink>
       <NavLink to="about">
-        <span className="material-symbols-outlined">info</span>
+        info
       </NavLink>
     </nav>
   );
