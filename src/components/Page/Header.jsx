@@ -1,17 +1,18 @@
 import styles from './Header.module.scss';
 import { useAuth } from '../../state/UserContext';
-import { FormButton } from '../Forms/FormControls';
+import { useNavigate } from 'react-router-dom';
+import CustomButton from '../Buttons/CustomButton';
 
 export default function Header() {
   const { signOut } = useAuth();
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
     await signOut();
+    navigate('welcome', { replace: true });
   };  
 
   return <header className={styles.Header}>
-    <FormButton onClick={handleSignOut} alt="Sign Out" title="Sign Out">
-      Sign Out
-    </FormButton>
+    <CustomButton onClick={handleSignOut}>Sign Out</CustomButton>
   </header>;
 }

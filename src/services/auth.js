@@ -16,6 +16,7 @@ export async function signInUser(info) {
 
 export async function signOutUser() {
   const response = await del(`${URL}/sessions`);
+  localStorage.removeItem(USER_KEY);
   return response;
 }
 

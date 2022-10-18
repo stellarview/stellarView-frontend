@@ -24,7 +24,7 @@ export default function UserProvider({ children }) {
 
   useEffect(() => {
     verify();
-  }, [user]);
+  }, []);
 
   const setUser = (user) => {
     storeLocalUser(user);
@@ -72,7 +72,7 @@ export function useAuth() {
 
   const signOut = async () => {
     const response = await signOutUser();
-    response.user = null;
+    setUser(null);
     handleResponse(response);
   };
 
