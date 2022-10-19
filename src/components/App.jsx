@@ -24,22 +24,21 @@ export default function App() {
       <UserProvider>
         <QuizProvider>
           <Routes>
-            <Route path="welcome" element={<WelcomePage/>}> 
-              <Route index element={<Welcome/>}/>
+            <Route path="welcome" element={<WelcomePage />}>
+              <Route index element={<Welcome />} />
               <Route path="signup" element={<SignUpForm />} />
               <Route path="signin" element={<SignInForm />} />
             </Route>
-            <Route element={<ProtectedRoute/>}>
-              <Route element={<Layout/>}>
+            <Route element={<ProtectedRoute />}>
+              <Route element={<Layout />}>
                 <Route index element={<Dashboard />} />
                 <Route path="quiz">
                   <Route path=":category" element={<Quiz />} />
                 </Route>
+                <Route path="profile" element={<ProfilePage />} />
+                <Route path="about" element={<AboutPage />} />
               </Route>
-              {/* <Route path="profile" element={<Profile/>}/>
-              <Route path="about" element={<About/>}/> */}
             </Route>
-
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </QuizProvider>
