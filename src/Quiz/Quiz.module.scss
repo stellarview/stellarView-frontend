@@ -7,4 +7,9 @@
       opacity: .5;
       transition: all .5s ease-in-out;
     }
+    
+    button:disabled {
+      opacity: 0.5;
+      cursor: default;
+    }
 }

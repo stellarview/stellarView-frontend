@@ -8,10 +8,19 @@ import { DashboardButton } from '../Buttons/CustomButton';
 
 export default function Dashboard() {
   const user = useUser();
+  // const [displayCategories, setDisplayCategories] = useState('');
 
   if (!user) return <Navigate to="welcome" />;
 
   const navigate = useNavigate();
+
+  // useEffect(() => {
+  //   const fetchCategories = async () => {
+  //     const data = await getCategories();
+  //     setDisplay(data);
+  //   };
+  //   fetchData();
+  // }, []);
 
   const handleClick = async (e) => {
     navigate(`quiz/${e.target.value}`);
@@ -24,6 +33,35 @@ export default function Dashboard() {
     HTML
     </DashboardButton>
 
+    <DashboardButton
+      value="css"
+      onClick={handleClick}>
+    CSS
+    </DashboardButton>
+
+    <DashboardButton
+      value="react"
+      onClick={handleClick}>
+    React
+    </DashboardButton>
+
+    <DashboardButton
+      value="node"
+      onClick={handleClick}>
+    Node
+    </DashboardButton>
+
+    <DashboardButton
+      value="express"
+      onClick={handleClick}>
+    Express
+    </DashboardButton>
+
+    <DashboardButton
+      value="dsna"
+      onClick={handleClick}>
+    DS&A
+    </DashboardButton>
 
     {/* {display.map((btn) => (
       <DashboardButton
@@ -33,8 +71,6 @@ export default function Dashboard() {
         {btn.category}
       </DashboardButton>
     ))} */}
-
-
 
   </div>;
 
