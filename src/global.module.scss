@@ -44,7 +44,9 @@ body {
     color: var(--white-color);
     display: flex;
     justify-content: center;
+    
   }
+
   
   :global(.label-text) {
     font-family: var(--label-font);

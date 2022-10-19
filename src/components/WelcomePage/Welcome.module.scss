@@ -17,4 +17,9 @@
         height: 320px;
     }
 
+    button:hover {
+        opacity: .5;
+        transition: all .5s ease-in-out;
+      }
+
 }
