@@ -2,13 +2,13 @@ import styles from './ProfilePage.module.scss';
 import { useEffect, useState } from 'react';
 import { getUserById } from '../../services/users';
 import CompletedCategoriesList from './UserInfoList';
+import shootingStar from '../../assets/icon_shooting_star.png';
 
 export default function ProfilePage() {
   const [userInfo, setUserInfo] = useState({ completed_categories: [] });
 
   async function fetchUserInfo() {
     const results = await getUserById();
-    console.log('results', results);
     setUserInfo(results.data);
   }
 
@@ -24,8 +24,8 @@ export default function ProfilePage() {
 
   return (
     <div className={styles.ProfilePage}>
-      <h1>{`Welcome, ${userInfo.username}!`}</h1>
-      <p>points: {userInfo.total_points}</p>
+      <h1>{`Greetings, ${userInfo.username}!`}</h1>
+      <p>{userInfo.total_points} <img src={shootingStar}/></p>
       {getBadges(userInfo.completed_categories)}
     </div>
   );
