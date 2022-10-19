@@ -34,6 +34,35 @@ export default function Dashboard() {
     HTML
     </DashboardButton>
 
+    <DashboardButton
+      value="css"
+      onClick={handleClick}>
+    CSS
+    </DashboardButton>
+
+    <DashboardButton
+      value="react"
+      onClick={handleClick}>
+    React
+    </DashboardButton>
+
+    <DashboardButton
+      value="node"
+      onClick={handleClick}>
+    Node
+    </DashboardButton>
+
+    <DashboardButton
+      value="express"
+      onClick={handleClick}>
+    Express
+    </DashboardButton>
+
+    <DashboardButton
+      value="dsna"
+      onClick={handleClick}>
+    DS&A
+    </DashboardButton>
 
     {/* {display.map((btn) => (
       <DashboardButton
@@ -43,8 +72,6 @@ export default function Dashboard() {
         {btn.category}
       </DashboardButton>
     ))} */}
-
-
 
   </div>;
 

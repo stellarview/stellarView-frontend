@@ -9,36 +9,62 @@ import styles from './Quiz.module.scss';
 
 export default function Quiz() {
   const { category } = useParams();
-  const { quizQuestions, setQuizQuestions, setCategory } = useQuizContext();
+  const [answersArray, setAnswersArray] = useState([]);
+  const [userAnswer, setUserAnswer] = useState(null);
+  const { quizQuestions, 
+    setQuizQuestions, 
+    setCategory } = useQuizContext();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   useEffect(() => {
     const fetchQuestions = async () => {
       setCategory(category);
-      const data = await getQuiz(category);
-      setQuizQuestions(data.data);
+      const { data } = await getQuiz(category);
+      // console.log('data', data);
+      setQuizQuestions(data);
+      data.map((correct) => {
+        setAnswersArray(answersArray => 
+          [...answersArray, correct.correct_answer]);
+      });
     };
     fetchQuestions();
   }, [category]);
+  console.log('line 31 userAnswer', userAnswer);
+  console.log('answersArray', answersArray);
 
   const getQuestionContent = questions => {
     if (questions.length > 0) {
       return <QuizCard 
         card={questions[currentQuestion]}
+        userAnswer={userAnswer}
+        setUserAnswer={setUserAnswer}
+        answersArray={answersArray[currentQuestion]}
+        currentQuestion={currentQuestion}
       />;
     }
   };
+
   return (
     <div className={styles.Quiz}>
-      {getQuestionContent(quizQuestions)}
+      {getQuestionContent(quizQuestions)}  
+            
       <CustomButton  
-        onClick={() => setCurrentQuestion(currentQuestion + 1)}
+        onClick={() => {
+          console.log('userAnswer', userAnswer);
+          setCurrentQuestion(currentQuestion + 1);
+          setUserAnswer(null);
+
+        }}
         style={{
           backgroundColor: 'midnightblue',
           color: 'white'
-        }} > 
+        }} 
+        disabled={userAnswer === null ? true : false}
+      > 
       Next Question
       </CustomButton>
+
     </div>
   );
 }
