@@ -2,8 +2,8 @@
 
 stellarView is a full-stack interactive prep tool to help developers build confidence for their next technical interview. 
 <br>
-[Live Deploy]('')
-[Backend Repository]('https://github.com/stellarview/stellarView-backend')
+[Live Deploy](https://stellarview.netlify.app/welcome)
+[Backend Repository](https://github.com/stellarview/stellarView-backend)
 <br>
 
 ## Build 
@@ -22,9 +22,9 @@ Users can log in to their personalized profile, choose from categories, and prac
 ## Contributors
 
 ### Kat Zaro (she/her)
-[LinkedIn]('https://www.linkedin.com/in/katzaro')
+[LinkedIn](https://www.linkedin.com/in/katzaro)
 <br>
-[GitHub]('https://github.com/kathrynzaro')
+[GitHub](https://github.com/kathrynzaro)
 <br>
 
 ### Jenna Graham (she/her)
