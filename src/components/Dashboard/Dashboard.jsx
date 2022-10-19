@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Dashboard.module.scss';
 import { useUser } from '../../state/UserContext.jsx';
 import { DashboardButton } from '../Buttons/CustomButton';
-import { useQuizContext } from '../../state/QuizContext';
 
 export default function Dashboard() {
   const user = useUser();

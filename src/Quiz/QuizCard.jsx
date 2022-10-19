@@ -6,14 +6,13 @@ export default function QuizCard({
   card, 
   userAnswer, 
   setUserAnswer, 
-  answersArray,
-  currentQuestion }) {
+  correctAnswer,
+}) {
 
-  const [rightAnswer, setRightAnswer] = useState(false);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
+  // isCorrectAnswer, setIsCorrectAnswer
 
-  // initialState
-  // correctAnswerState
-  // wrongState
+  // normalize this data on the backend "stretch"
   const { question, 
     choice_one, 
     choice_two, 
@@ -26,32 +25,24 @@ export default function QuizCard({
     console.log('e.target.value', e.target.value);
   };
   
-  // useEffect(() => {
-  //   const fetchCorrect = async () => {
-  //     await handleCompareAnswer();
-  //   };
-  //   fetchCorrect();
-  // }, [userAnswer]);
-  
   const handleCompareAnswer = async (answer) => {
-    console.log('currentQuestion line 37', currentQuestion);
-    console.log('answer line 38', answer);
-    console.log('answersArray[currentQuestion]', answersArray[currentQuestion]);
-    console.log(answer === answersArray[currentQuestion]);
-    if (answersArray.length > 0 
-      && answer === answersArray[currentQuestion]) {
-      setRightAnswer(true);
+    console.log(answer === correctAnswer);
+    if (correctAnswer.length > 0 
+      && answer === correctAnswer) {
+      setIsCorrectAnswer(true);
     } else {
-      setRightAnswer(false);
+      setIsCorrectAnswer(false);
     }
   };
-  console.log('rightAnswer', rightAnswer);
 
-  const buttonBackground = (userAnswer, rightAnswer, buttonAnswer) => {
+  const buttonBackground = (userAnswer, isCorrectAnswer, buttonAnswer) => {
     if (userAnswer === null) {
       return 'white';
-    } else if (buttonAnswer === answersArray[currentQuestion]) {
-      return 'chartreuse';     
+    } else if (buttonAnswer === correctAnswer) {
+      return 'chartreuse'; 
+      /* 
+      Execute Confetti Rain!
+      */  
     } else if (userAnswer === buttonAnswer){
       return 'red';
     } else {
@@ -59,16 +50,21 @@ export default function QuizCard({
     }
   };
 
+  /* Normalizing our data structure will allow us to map through the data to 
+render a button for each option, rather than having multiple buttons hardcoded, 
+which would reduce the amount of code modification needed for updates,
+refactors, etc.
+*/
+
   return (
     <div className={styles.QuizCard}>
       <h2>{question}</h2>
-      
       
       <CustomButton 
         value={choice_one} 
         onClick={handleClick}
         style={{ backgroundColor: 
-            buttonBackground(userAnswer, rightAnswer, choice_one) }} 
+            buttonBackground(userAnswer, isCorrectAnswer, choice_one) }} 
         disabled={userAnswer === null ? false : true}
       >
         {choice_one}
@@ -78,18 +74,17 @@ export default function QuizCard({
         value={choice_two} 
         onClick={handleClick}
         style={{ backgroundColor: 
-          buttonBackground(userAnswer, rightAnswer, choice_two) }}
+          buttonBackground(userAnswer, isCorrectAnswer, choice_two) }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_two}
-        
       </CustomButton>
 
       <CustomButton 
         value={choice_three} 
         onClick={(e) => setUserAnswer(e.target.value)}
         style={{ backgroundColor: 
-          buttonBackground(userAnswer, rightAnswer, choice_three) }}
+          buttonBackground(userAnswer, isCorrectAnswer, choice_three) }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_three}
@@ -99,7 +94,7 @@ export default function QuizCard({
         value={choice_four} 
         onClick={(e) => setUserAnswer(e.target.value)}
         style={{ backgroundColor: 
-          buttonBackground(userAnswer, rightAnswer, choice_four) }}
+          buttonBackground(userAnswer, isCorrectAnswer, choice_four) }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_four}
