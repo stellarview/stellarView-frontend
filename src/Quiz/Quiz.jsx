@@ -53,7 +53,10 @@ export default function Quiz() {
     <div className={styles.Quiz}>
       {getQuestionContent(quizQuestions)}
       <QuizButton  
-        onClick={() => setCurrentQuestion(currentQuestion + 1)}
+        onClick={() => {
+          setCurrentQuestion(currentQuestion + 1);
+          setUserAnswer(null);
+        }}
         style={{
           backgroundColor: 'midnightblue',
           color: 'white'
