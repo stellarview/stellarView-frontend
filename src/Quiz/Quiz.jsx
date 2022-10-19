@@ -30,7 +30,8 @@ export default function Quiz() {
     <div>
       {getQuestionContent(quizQuestions)}
       <CustomButton  
-        onClick={() => setCurrentQuestion(currentQuestion + 1)}> 
+        onClick={() => setCurrentQuestion(currentQuestion + 1)}
+        disabled={ currentQuestion >= 5 ? true : false}> 
       Next Question
       </CustomButton>
     </div>
