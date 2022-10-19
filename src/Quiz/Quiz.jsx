@@ -4,6 +4,8 @@ import CustomButton from '../components/Buttons/CustomButton';
 import { getQuiz } from '../services/quiz';
 import { useQuizContext } from '../state/QuizContext';
 import QuizCard from './QuizCard';
+import styles from './Quiz.module.scss';
+
 
 export default function Quiz() {
   const { category } = useParams();
@@ -27,10 +29,14 @@ export default function Quiz() {
     }
   };
   return (
-    <div>
+    <div className={styles.Quiz}>
       {getQuestionContent(quizQuestions)}
       <CustomButton  
-        onClick={() => setCurrentQuestion(currentQuestion + 1)}> 
+        onClick={() => setCurrentQuestion(currentQuestion + 1)}
+        style={{
+          backgroundColor: 'midnightblue',
+          color: 'white'
+        }} > 
       Next Question
       </CustomButton>
     </div>
