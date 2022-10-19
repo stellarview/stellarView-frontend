@@ -1,4 +1,5 @@
 import CustomButton from '../components/Buttons/CustomButton';
+import styles from './QuizCard.module.scss';
 
 export default function QuizCard({ card }) {
 
@@ -9,7 +10,7 @@ export default function QuizCard({ card }) {
     choice_four } = card;
 
   return (
-    <div>
+    <div className={styles.QuizCard}>
       <h2>{question}</h2>
       <CustomButton>{choice_one}</CustomButton>
       <CustomButton>{choice_two}</CustomButton>
