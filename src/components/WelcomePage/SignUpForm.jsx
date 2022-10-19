@@ -40,6 +40,15 @@ export default function SignUpForm() {
           or <br></br>create with email
         </h1>
         <InputControl
+          label="username"
+          name="username"
+          type="username"
+          required
+          value={credentials.username}
+          onChange={handleChange}
+        />
+
+        <InputControl
           label="Email"
           name="email"
           type="email"
@@ -56,6 +65,7 @@ export default function SignUpForm() {
           value={credentials.password}
           onChange={handleChange}
         />
+        
 
         <FormButton>Submit</FormButton>
 

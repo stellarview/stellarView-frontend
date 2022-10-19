@@ -9,7 +9,6 @@ export default function Layout() {
   if (!user) return <Navigate to="welcome" />;
   return (
     <div className={styles.Layout}>
-      Layout
       <Header />
       <main>
         <Outlet />

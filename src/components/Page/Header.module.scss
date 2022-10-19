@@ -1,0 +1,46 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  .LogoAndSignOut {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .UserStats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+
+    span {
+      padding-left: 12px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      background-color: midnightblue;
+      border-radius: 10px;
+      opacity: 80%;
+    }
+    .Points {
+      padding: 5px;
+
+      span {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        color: #f5d367;
+        font-size: 1.2rem;
+      }
+
+      img {
+        width: 40px;
+        padding-left: 3px;
+        padding-right: 6px;
+        padding-bottom: 3px;
+      }
+    }
+  }
+}

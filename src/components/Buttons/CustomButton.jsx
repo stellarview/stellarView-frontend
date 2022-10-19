@@ -19,3 +19,12 @@ export function DashboardButton({ children, ...rest }) {
     </button>
   );
 }
+
+export function QuizButton({ children, ...rest }) {
+  const className = classnames(styles.QuizButton);
+  return (
+    <button className={className} {...rest}>
+      {children}
+    </button>
+  );
+}

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import CustomButton from '../components/Buttons/CustomButton';
+import { QuizButton } from '../components/Buttons/CustomButton';
 import styles from './QuizCard.module.scss';
 
 export default function QuizCard({ 
@@ -60,7 +60,7 @@ refactors, etc.
     <div className={styles.QuizCard}>
       <h2>{question}</h2>
       
-      <CustomButton 
+      <QuizButton 
         value={choice_one} 
         onClick={handleClick}
         style={{ backgroundColor: 
@@ -68,9 +68,9 @@ refactors, etc.
         disabled={userAnswer === null ? false : true}
       >
         {choice_one}
-      </CustomButton>
+      </QuizButton>
 
-      <CustomButton 
+      <QuizButton 
         value={choice_two} 
         onClick={handleClick}
         style={{ backgroundColor: 
@@ -78,9 +78,9 @@ refactors, etc.
         disabled={userAnswer === null ? false : true}
       >
         {choice_two}
-      </CustomButton>
+      </QuizButton>
 
-      <CustomButton 
+      <QuizButton 
         value={choice_three} 
         onClick={(e) => setUserAnswer(e.target.value)}
         style={{ backgroundColor: 
@@ -88,9 +88,9 @@ refactors, etc.
         disabled={userAnswer === null ? false : true}
       >
         {choice_three}
-      </CustomButton>
+      </QuizButton>
 
-      <CustomButton 
+      <QuizButton 
         value={choice_four} 
         onClick={(e) => setUserAnswer(e.target.value)}
         style={{ backgroundColor: 
@@ -98,7 +98,7 @@ refactors, etc.
         disabled={userAnswer === null ? false : true}
       >
         {choice_four}
-      </CustomButton>
+      </QuizButton>
     </div>
   );
 }
