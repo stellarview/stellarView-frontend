@@ -2,8 +2,8 @@
 
 stellarView is a full-stack interactive prep tool to help developers build confidence for their next technical interview. 
 <br>
-[Live Deploy]('')
-[Backend Repository]('https://github.com/stellarview/stellarView-backend')
+[Live Deploy](https://stellarview.netlify.app/welcome)
+[Backend Repository](https://github.com/stellarview/stellarView-backend)
 <br>
 
 ## Build 
