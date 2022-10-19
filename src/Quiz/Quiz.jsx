@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import CustomButton from '../components/Buttons/CustomButton';
+import { QuizButton } from '../components/Buttons/CustomButton';
 import { getQuiz } from '../services/quiz';
 import { useQuizContext } from '../state/QuizContext';
 import QuizCard from './QuizCard';
@@ -31,14 +31,14 @@ export default function Quiz() {
   return (
     <div className={styles.Quiz}>
       {getQuestionContent(quizQuestions)}
-      <CustomButton  
+      <QuizButton  
         onClick={() => setCurrentQuestion(currentQuestion + 1)}
         style={{
           backgroundColor: 'midnightblue',
           color: 'white'
         }} > 
       Next Question
-      </CustomButton>
+      </QuizButton>
     </div>
   );
 }

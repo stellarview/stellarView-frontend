@@ -1,0 +1,13 @@
+.Layout {
+    display: grid;
+    gap: 10px;
+    width: 350px;
+    justify-content: center;
+
+       button:hover {
+      opacity: .5;
+      transition: all .5s ease-in-out;
+    }
+}
+
+

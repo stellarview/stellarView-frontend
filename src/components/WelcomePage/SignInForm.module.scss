@@ -1,11 +1,19 @@
-.AuthForm {
-    width: 400px;
-    background: var(--offset-color);
-    padding: 25px;
-    display: grid;
-    gap: 30px;
+.SignInForm {
+    width: 350px;
 
-    .Link {
-        color: black;
+    button {
+        display: flex;
+        align-items: center;
+        background-color: midnightblue;
+        color: white; 
     }
+    button:hover {
+        opacity: .5;
+        transition: all .5s ease-in-out;
+      }
+    img {
+        width: 30px;
+        padding: 4px;
+    }
+
 }
