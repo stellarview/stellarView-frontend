@@ -36,8 +36,8 @@ export default function App() {
                   <Route path=":category" element={<Quiz />} />
                 </Route>
               </Route>
-              {/* <Route path="profile" element={<Profile/>}/>
-              <Route path="about" element={<About/>}/> */}
+              <Route path="profile" element={<ProfilePage/>}/>
+              <Route path="about" element={<AboutPage/>}/>
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />
