@@ -7,7 +7,7 @@ export default function WelcomePage() {
   if (user) return <Navigate to="/" />;
   return (
     <main className={styles.WelcomePage}>
-      <h1>StellarView</h1>
+      <h1>Stellar <br></br>View</h1>
       <Outlet />
     </main>
   );

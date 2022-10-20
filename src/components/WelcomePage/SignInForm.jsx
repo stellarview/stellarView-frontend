@@ -19,10 +19,10 @@ export default function SignInForm() {
 
   return (
     <form className={styles.SignInForm} onSubmit={handleSubmit}>
-      <h1>Sign Into Your Account</h1>
+      <h2>Sign Into Your Account</h2>
 
       <InputControl
-        label="Email"
+        placeholder="Email"
         name="email"
         type="email"
         required
@@ -31,7 +31,7 @@ export default function SignInForm() {
       />
 
       <InputControl
-        label="Password"
+        placeholder ="Password"
         name="password"
         type="password"
         required

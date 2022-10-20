@@ -3,11 +3,13 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   
     h1 {
-      font-size: 1.2em;
+      font-size: 3.5em;
       font-weight: 600;
+      font-family: 'Bungee Outline', cursive;
+      margin: 0px;
     }
 
     button:hover {
