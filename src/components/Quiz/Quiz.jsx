@@ -9,7 +9,7 @@ import { updateCompletedCategories } from '../../services/users';
 import { useUser } from '../../state/UserContext';
 
 export default function Quiz() {
-  const { category } = useParams();
+  const { category, level } = useParams();
   const [answersArray, setAnswersArray] = useState([]);
   const [userAnswer, setUserAnswer] = useState(null);
   const { quizQuestions, 
@@ -36,7 +36,7 @@ export default function Quiz() {
   useEffect(() => {
     const fetchQuestions = async () => {
       setCategory(category);
-      const { data } = await getQuiz(category);
+      const { data } = await getQuiz(category, level);
       console.log('data', data);
       setQuizQuestions(data);
       data.map((correct) => {

@@ -35,7 +35,7 @@ export default function ProfilePage() {
         </p>
       </div>
       <div className={styles.Badges}>
-        <h1>Badges</h1>
+        <h2>Completed Categories</h2>
         {getBadges(userInfo.completed_categories)}
       </div>
     </div>

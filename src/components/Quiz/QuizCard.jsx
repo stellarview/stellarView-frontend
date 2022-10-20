@@ -7,8 +7,6 @@ export default function QuizCard({
   userAnswer, 
   setUserAnswer, 
   correctAnswer,
-  quizQuestions,
-  setQuizQuestions,
   isWrong,
   setIsWrong,
   isWrongAnswer,
@@ -107,31 +105,36 @@ refactors, etc.
         {choice_two}
       </QuizButton>
 
-      <QuizButton 
-        value={choice_three} 
-        onClick={(e) => setUserAnswer(e.target.value)}
-        style={{
-          backgroundColor: buttonBackground(
-            userAnswer, isCorrectAnswer, choice_three
-          )
-        }}
-        disabled={userAnswer === null ? false : true}
-      >
-        {choice_three}
-      </QuizButton>
-
-      <QuizButton 
-        value={choice_four} 
-        onClick={(e) => setUserAnswer(e.target.value)}
-        style={{
-          backgroundColor: buttonBackground(
-            userAnswer, isCorrectAnswer, choice_four
-          )
-        }}
-        disabled={userAnswer === null ? false : true}
-      >
-        {choice_four}
-      </QuizButton>
+      { choice_three 
+        ? <QuizButton 
+          value={choice_three} 
+          onClick={(e) => setUserAnswer(e.target.value)}
+          style={{
+            backgroundColor: buttonBackground(
+              userAnswer, isCorrectAnswer, choice_three
+            )
+          }}
+          disabled={userAnswer === null ? false : true}
+        >
+          {choice_three}
+        </QuizButton>
+        : <></>
+      }
+      { choice_four 
+        ? <QuizButton 
+          value={choice_four} 
+          onClick={(e) => setUserAnswer(e.target.value)}
+          style={{
+            backgroundColor: buttonBackground(
+              userAnswer, isCorrectAnswer, choice_four
+            )
+          }}
+          disabled={userAnswer === null ? false : true}
+        >
+          {choice_four}
+        </QuizButton>
+        : <></>
+      }
     </div>
   );
 }
