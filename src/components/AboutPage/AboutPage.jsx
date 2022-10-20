@@ -15,6 +15,7 @@ export default function AboutPage() {
     <div className={styles.grid}>
       <div className={styles.AboutPage}>
         <img src={Aaron}/>
+        <p className={styles.text}>Aaron Enyetu (he/him)</p>
         <div>
           <a href="https://github.com/aaronEnyetu" 
             target="_blank" rel="noreferrer noopener">
@@ -29,6 +30,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Kat}/>
+        <p className={styles.text}>Kat Zaro (she/her)</p>
         <div>
           <a href="https://github.com/kathrynzaro"
             target="_blank" rel="noreferrer noopener">
@@ -43,6 +45,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Kashi}/>
+        <p className={styles.text}>Kashi May Tamang (they/them)</p>
         <div>
           <a href="https://github.com/kashitamang"
             target="_blank" rel="noreferrer noopener">
@@ -57,6 +60,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Jenna}/>
+        <p className={styles.text}>Jenna Graham (she/her)</p>
         <div>
           <a href="https://github.com/jenna-lee-graham"
             target="_blank" rel="noreferrer noopener">
@@ -71,6 +75,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Brien}/>
+        <p className={styles.text}>Brien Thomas (he/him)</p>
         <div>
           <a href="https://github.com/briensthomas"
             target="_blank" rel="noreferrer noopener">
@@ -85,6 +90,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Austin}/>
+        <p className={styles.text}>Austin Han (he/him)</p>
         <div>
           <a href="https://github.com/austinbhan"
             target="_blank" rel="noreferrer noopener">

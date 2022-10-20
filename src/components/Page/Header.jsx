@@ -29,8 +29,9 @@ export default function Header() {
   return (
     <header className={styles.Header}>
       <div className={styles.LogoAndSignOut}>
-        <h2>StellarView</h2>
+        <h2>Stellar<br></br>View</h2>
         <CustomButton onClick={handleSignOut}>Sign Out</CustomButton>
+        
       </div>
       <div className={styles.UserStats}>
         <div>

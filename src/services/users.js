@@ -12,8 +12,3 @@ export async function updateCompletedCategories(id, userStatUpdates) {
   const response = await patch(`${URL}/${id}`, userStatUpdates);
   return response.body;
 }
-
-//   .send({
-//   id,
-//   userStatUpdates,
-// })
