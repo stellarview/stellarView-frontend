@@ -14,9 +14,10 @@ import Layout from './Page/Layout';
 import Dashboard from './Dashboard/Dashboard';
 import ProtectedRoute from './WelcomePage/ProtectedRoutes';
 import QuizProvider from '../state/QuizContext';
-import Quiz from '../Quiz/Quiz';
+import Quiz from './Quiz/Quiz';
 import AboutPage from './AboutPage/AboutPage';
 import ProfilePage from './ProfilePage/ProfilePage';
+import ScorePage from './Quiz/ScorePage';
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
                 <Route index element={<Dashboard />} />
                 <Route path="quiz">
                   <Route path=":category" element={<Quiz />} />
+                  <Route path="score-page" element={<ScorePage />} />
                 </Route>
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="about" element={<AboutPage />} />

@@ -24,16 +24,13 @@ export default function ProfilePage() {
   return (
     <div className={styles.ProfilePage}>
       <div className={styles.UserInfo}>
-        <p>
-          <b>Username: </b>
+        <h2>
           {userInfo.username}
-        </p>
+        </h2>
         <p>
-          <b>Email: </b>
           {userInfo.email}
         </p>
         <p>
-          <b>Shooting Stars: </b>
           {userInfo.total_points}
         </p>
       </div>

@@ -22,7 +22,7 @@ export default function Welcome() {
   return (
     <main className={styles.Welcome}>
       <h1>
-        Build confidence for your next technical interview...
+        Build confidence for your next technical interview
         <img src={standingAlien} />
       </h1>
       <CustomButton
