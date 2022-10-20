@@ -5,28 +5,41 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Dashboard.module.scss';
 import { useUser } from '../../state/UserContext.jsx';
 import { DashboardButton } from '../Buttons/CustomButton';
+import { getCategoriesAndLevels } from '../../services/quiz';
+import { useEffect, useState } from 'react';
 
 export default function Dashboard() {
   const user = useUser();
-  // const [displayCategories, setDisplayCategories] = useState('');
+  const [displayCategories, setDisplayCategories] = useState('');
 
   if (!user) return <Navigate to="welcome" />;
 
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const fetchCategories = async () => {
-  //     const data = await getCategories();
-  //     setDisplay(data);
-  //   };
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const data = await getCategoriesAndLevels();
+      setDisplayCategories(data);
+    };
+    fetchCategories();
+  }, []);
 
   const handleClick = async (e) => {
     navigate(`quiz/${e.target.value}`);
   };
 
   return <div className={styles.Dashboard}>
+
+    {displayCategories.map((button) => (
+      <DashboardButton key={button.id}
+        value={`${button.category}/${button.level}`}
+        onClick={handleClick}
+      >
+        {button.category}
+        Level: {button.level}
+      </DashboardButton>
+    ))}
+  
     <DashboardButton
       value="html"
       onClick={handleClick}>

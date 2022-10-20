@@ -65,30 +65,30 @@ export default function Quiz() {
     }
   };
 
-
-  // THIS IS WHERE WE'RE WORKING KATHRYN
-
   const sendUserStatUpdates = async () => {
     // pinpoint quiz category
     const statUpdates = { completed_categories: category, total_points: 5 };
 
     console.log('statUpdates', statUpdates);
     console.log('user', user);
-    await updateCompletedCategories(user.id, statUpdates);
     // send to completed_categories
     // push 5 points onto total_points
+    await updateCompletedCategories(user.id, statUpdates);
   };
-
+  // Here we're checking that "isWrong" array, and if any 
+  // questions were marked as wrong, redisplay them
   const checkIsWrong = () => {
-    console.log('quizQuestions', quizQuestions);
-    console.log('isWrong', isWrong);
     setCurrentQuestion(0);
+    // reset the quiz questions to those answered wrongly
     setQuizQuestions(isWrong);
+    // we also reset the quiz answers to match the wrong questions
     setAnswersArray(isWrongAnswer);
+    // reset the "wrong" states
     setIsWrongAnswer([]);
     setIsWrong([]);
     if (isWrong.length === 0) {
-      // THIS IS WHERE YOU'RE WORKING KATHRYN
+      // No more wrong questions? Send points, completed status, 
+      // navigate to the score page
       sendUserStatUpdates();
       navigate('score-page');
     }
@@ -103,7 +103,9 @@ export default function Quiz() {
           console.log('current question', currentQuestion);
           console.log(quizQuestions.length);
           currentQuestion < quizQuestions.length - 1
+          // Normal questions displayed next
             ? setCurrentQuestion(currentQuestion + 1)
+            // No more normal questions? Display the "wrong" questions
             : checkIsWrong();
           
           setUserAnswer(null);
