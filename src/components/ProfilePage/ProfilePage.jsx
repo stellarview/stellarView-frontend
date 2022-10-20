@@ -24,9 +24,9 @@ export default function ProfilePage() {
   return (
     <div className={styles.ProfilePage}>
       <div className={styles.UserInfo}>
-        <h2>
+        <p>
           {userInfo.username}
-        </h2>
+        </p>
         <p>
           {userInfo.email}
         </p>
