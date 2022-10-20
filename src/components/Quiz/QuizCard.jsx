@@ -32,7 +32,7 @@ export default function QuizCard({
   
   const handleCompareAnswer = (answer) => {
     console.log('answer', answer, correctAnswer);
-    if (answer.trim() === correctAnswer.trim()) {
+    if (answer === correctAnswer) {
       setIsCorrectAnswer(true);
     } else {
       console.log('isWrong', isWrong);
@@ -59,12 +59,12 @@ export default function QuizCard({
   const buttonBackground = (userAnswer, isCorrectAnswer, buttonAnswer) => {
     if (userAnswer === null) {
       return 'white';
-    } else if (buttonAnswer.trim() === correctAnswer.trim()) {
+    } else if (buttonAnswer === correctAnswer) {
       return 'chartreuse'; 
       /* 
       Execute Confetti Rain!
       */  
-    } else if (userAnswer.trim() === buttonAnswer.trim()) {
+    } else if (userAnswer === buttonAnswer) {
       return 'red';
     } else {
       return 'white';

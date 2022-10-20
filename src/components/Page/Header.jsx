@@ -9,6 +9,7 @@ import shootingStar from '../../assets/icon_shooting_star.png';
 export default function Header() {
   const { signOut } = useAuth();
   const navigate = useNavigate();
+  // useContext?
   const [userInfo, setUserInfo] = useState([]);
 
   async function fetchUserInfo() {
