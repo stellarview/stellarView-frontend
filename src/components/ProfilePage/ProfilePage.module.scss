@@ -1,10 +1,19 @@
 .ProfilePage {
+    // background-color: midnightblue;
+    // border-radius: 10px;
+
+
     .UserInfo {
-        background-color: #2f2f2fa1;
+        // background-color: #2f2f2fa1;
+        background-color: midnightblue;
         color: white;
         padding: 10px;
-        margin: 10px 0px 10px 0px;
+        margin: 20px 0px 10px 0px;
         border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
      
         b {
          color: rgb(182, 182, 182);
@@ -13,10 +22,11 @@
      }
 
      .Badges {
-        background-color: #828282a1;
+        // background-color: #828282a1;
+        background-color: midnightblue;
         color: white;
         padding: 10px;
-        margin: 10px 0px 10px 0px;
+        margin: 10px 0px 20px 0px;
         border-radius: 10px;
 
         h1 {

@@ -27,6 +27,7 @@ export default function Dashboard() {
   };
 
   return <div className={styles.Dashboard}>
+    
     <DashboardButton
       value="html"
       onClick={handleClick}>

@@ -21,10 +21,10 @@ export default function Welcome() {
 
   return (
     <main className={styles.Welcome}>
-      <h1>
-        Build confidence for your next technical interview...
+      <h2>
+        Build confidence for your next technical interview
         <img src={standingAlien} />
-      </h1>
+      </h2>
       <CustomButton
         onClick={signUpRedirect}
         style={{

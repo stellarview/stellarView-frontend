@@ -1,11 +1,19 @@
 .SignInForm {
     width: 350px;
-
+    display: grid;
+    gap: 10px;
+    
+    input {
+        border-radius: 8px;
+        padding: 5px;
+        border: none;
+    }
     button {
         display: flex;
         align-items: center;
         background-color: midnightblue;
         color: white; 
+        justify-content: center;
     }
     button:hover {
         opacity: .5;

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { QuizButton } from '../components/Buttons/CustomButton';
+import { QuizButton } from '../Buttons/CustomButton';
 import styles from './QuizCard.module.scss';
 
 export default function QuizCard({ 
@@ -7,10 +7,15 @@ export default function QuizCard({
   userAnswer, 
   setUserAnswer, 
   correctAnswer,
+  quizQuestions,
+  setQuizQuestions,
+  isWrong,
+  setIsWrong,
+  isWrongAnswer,
+  setIsWrongAnswer
 }) {
 
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
-  // isCorrectAnswer, setIsCorrectAnswer
 
   // normalize this data on the backend "stretch"
   const { question, 
@@ -25,25 +30,41 @@ export default function QuizCard({
     console.log('e.target.value', e.target.value);
   };
   
-  const handleCompareAnswer = async (answer) => {
-    console.log(answer === correctAnswer);
-    if (correctAnswer.length > 0 
-      && answer === correctAnswer) {
+  const handleCompareAnswer = (answer) => {
+    console.log('answer', answer, correctAnswer);
+    if (answer.trim() === correctAnswer.trim()) {
       setIsCorrectAnswer(true);
     } else {
+      console.log('isWrong', isWrong);
+      // console.log('isCorrectAnswer', isCorrectAnswer);
       setIsCorrectAnswer(false);
+      // console.log('card', card);
+      setIsWrong([...isWrong, card]);
+      setIsWrongAnswer([...isWrongAnswer, correctAnswer]);
+      // setQuizQuestions();
+      // quizQuestions.map((quiz) => {
+      //   setQuizQuestions(quizQuestions => 
+      //     [...quizQuestions, quiz]);
+      // });
     }
+    
   };
+
+
+
+  // console.log('line 44', quizQuestions);
+
+  // console.log('card', card);
 
   const buttonBackground = (userAnswer, isCorrectAnswer, buttonAnswer) => {
     if (userAnswer === null) {
       return 'white';
-    } else if (buttonAnswer === correctAnswer) {
+    } else if (buttonAnswer.trim() === correctAnswer.trim()) {
       return 'chartreuse'; 
       /* 
       Execute Confetti Rain!
       */  
-    } else if (userAnswer === buttonAnswer){
+    } else if (userAnswer.trim() === buttonAnswer.trim()) {
       return 'red';
     } else {
       return 'white';
@@ -63,8 +84,11 @@ refactors, etc.
       <QuizButton 
         value={choice_one} 
         onClick={handleClick}
-        style={{ backgroundColor: 
-            buttonBackground(userAnswer, isCorrectAnswer, choice_one) }} 
+        style={{
+          backgroundColor: buttonBackground(
+            userAnswer, isCorrectAnswer, choice_one
+          )
+        }} 
         disabled={userAnswer === null ? false : true}
       >
         {choice_one}
@@ -73,8 +97,11 @@ refactors, etc.
       <QuizButton 
         value={choice_two} 
         onClick={handleClick}
-        style={{ backgroundColor: 
-          buttonBackground(userAnswer, isCorrectAnswer, choice_two) }}
+        style={{
+          backgroundColor: buttonBackground(
+            userAnswer, isCorrectAnswer, choice_two
+          )
+        }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_two}
@@ -83,8 +110,11 @@ refactors, etc.
       <QuizButton 
         value={choice_three} 
         onClick={(e) => setUserAnswer(e.target.value)}
-        style={{ backgroundColor: 
-          buttonBackground(userAnswer, isCorrectAnswer, choice_three) }}
+        style={{
+          backgroundColor: buttonBackground(
+            userAnswer, isCorrectAnswer, choice_three
+          )
+        }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_three}
@@ -93,8 +123,11 @@ refactors, etc.
       <QuizButton 
         value={choice_four} 
         onClick={(e) => setUserAnswer(e.target.value)}
-        style={{ backgroundColor: 
-          buttonBackground(userAnswer, isCorrectAnswer, choice_four) }}
+        style={{
+          backgroundColor: buttonBackground(
+            userAnswer, isCorrectAnswer, choice_four
+          )
+        }}
         disabled={userAnswer === null ? false : true}
       >
         {choice_four}

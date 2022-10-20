@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { QuizButton } from '../components/Buttons/CustomButton';
-import { getQuiz } from '../services/quiz';
-import { useQuizContext } from '../state/QuizContext';
+import { useNavigate, useParams } from 'react-router-dom';
+import CustomButton from '../Buttons/CustomButton';
+import { getQuiz } from '../../services/quiz';
+import { useQuizContext } from '../../state/QuizContext';
 import QuizCard from './QuizCard';
 import styles from './Quiz.module.scss';
+import { updateCompletedCategories } from '../../services/users';
 
 export default function Quiz() {
   const { category } = useParams();
@@ -15,6 +16,13 @@ export default function Quiz() {
     setCategory } = useQuizContext();
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [isWrong, setIsWrong] = useState([]);
+  const [isWrongAnswer, setIsWrongAnswer] = useState([]);
+
+
+  // const [points, setPoints] = useState(0)
+
+  const navigate = useNavigate();
 
   /* Tell me about a time you had to decide between two features:
     Deciding to not use an Authoritative Client? Server? in our quiz database
@@ -27,7 +35,7 @@ export default function Quiz() {
     const fetchQuestions = async () => {
       setCategory(category);
       const { data } = await getQuiz(category);
-      // console.log('data', data);
+      console.log('data', data);
       setQuizQuestions(data);
       data.map((correct) => {
         setAnswersArray(answersArray => 
@@ -45,16 +53,54 @@ export default function Quiz() {
         setUserAnswer={setUserAnswer}
         correctAnswer={answersArray[currentQuestion]}
         currentQuestion={currentQuestion}
+        quizQuestions={quizQuestions}
+        setQuizQuestions={setQuizQuestions}
+        isWrong={isWrong}
+        setIsWrong={setIsWrong}
+        isWrongAnswer={isWrongAnswer}
+        setIsWrongAnswer={setIsWrongAnswer}
       />;
     }
   };
 
+
+  // THIS IS WHERE WE'RE WORKING KATHRYN
+
+  const sendUserStatUpdates = async () => {
+    // pinpoint quiz category
+    const statUpdates = { category, total_points: 5 };
+    await updateCompletedCategories(statUpdates);
+    // send to completed_categories
+    // push 5 points onto total_points
+  };
+
+  const checkIsWrong = () => {
+    console.log('quizQuestions', quizQuestions);
+    console.log('isWrong', isWrong);
+    setCurrentQuestion(0);
+    setQuizQuestions(isWrong);
+    setAnswersArray(isWrongAnswer);
+    setIsWrongAnswer([]);
+    setIsWrong([]);
+    if (isWrong.length === 0) {
+      // THIS IS WHERE YOU'RE WORKING KATHRYN
+      sendUserStatUpdates();
+      navigate('score-page');
+    }
+  }; 
+
   return (
     <div className={styles.Quiz}>
       {getQuestionContent(quizQuestions)}
-      <QuizButton  
+      <CustomButton  
         onClick={() => {
-          setCurrentQuestion(currentQuestion + 1);
+          
+          console.log('current question', currentQuestion);
+          console.log(quizQuestions.length);
+          currentQuestion < quizQuestions.length - 1
+            ? setCurrentQuestion(currentQuestion + 1)
+            : checkIsWrong();
+          
           setUserAnswer(null);
         }}
         style={{
@@ -63,8 +109,8 @@ export default function Quiz() {
         }} 
         disabled={userAnswer === null ? true : false}
       > 
-      Next Question
-      </QuizButton>
+      Continue
+      </CustomButton>
     </div>
   );
 }

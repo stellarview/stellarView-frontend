@@ -25,42 +25,34 @@ export default function SignUpForm() {
 
   return (
     <div className={styles.SignUpForm}>
-      <CustomButton
-        onClick={gitHubRedirect}
-        style={{
-          background: '#24292f',
-          color: 'white',
-        }}
-      >
-        <img src={gitHubLogoWhite} />
-        Continue with GitHub
-      </CustomButton>
+      <h2> Create an account </h2>
       <form className={styles.SignUpForm} onSubmit={handleSubmit}>
-        <h1>
-          or <br></br>create with email
-        </h1>
+        
         <InputControl
-          label="username"
+          // label="username"
           name="username"
           type="username"
+          placeholder="Username"
           required
           value={credentials.username}
           onChange={handleChange}
         />
 
         <InputControl
-          label="Email"
+          // label="Email"
           name="email"
           type="email"
+          placeholder="Email"
           required
           value={credentials.email}
           onChange={handleChange}
         />
 
         <InputControl
-          label="Password"
+          // label="Password"
           name="password"
           type="password"
+          placeholder="Password"
           required
           value={credentials.password}
           onChange={handleChange}
@@ -68,6 +60,20 @@ export default function SignUpForm() {
         
 
         <FormButton>Submit</FormButton>
+        <h2>
+          <hr></hr>OR 
+        </h2>
+
+        <CustomButton
+          onClick={gitHubRedirect}
+          style={{
+            background: '#24292f',
+            color: 'white',
+          }}
+        >
+          <img src={gitHubLogoWhite} />
+        Continue with GitHub
+        </CustomButton>
 
         <p className="error">{error}</p>
       </form>
