@@ -5,6 +5,7 @@ import { getQuiz } from '../../services/quiz';
 import { useQuizContext } from '../../state/QuizContext';
 import QuizCard from './QuizCard';
 import styles from './Quiz.module.scss';
+import { updateCompletedCategories } from '../../services/users';
 
 export default function Quiz() {
   const { category } = useParams();
@@ -43,6 +44,7 @@ export default function Quiz() {
     };
     fetchQuestions();
   }, [category]);
+
   const getQuestionContent = questions => {
     if (questions.length > 0) {
       return <QuizCard 
@@ -61,6 +63,17 @@ export default function Quiz() {
     }
   };
 
+
+  // THIS IS WHERE WE'RE WORKING KATHRYN
+
+  const sendUserStatUpdates = async () => {
+    // pinpoint quiz category
+    const statUpdates = { category, total_points: 5 };
+    await updateCompletedCategories(statUpdates);
+    // send to completed_categories
+    // push 5 points onto total_points
+  };
+
   const checkIsWrong = () => {
     console.log('quizQuestions', quizQuestions);
     console.log('isWrong', isWrong);
@@ -70,6 +83,8 @@ export default function Quiz() {
     setIsWrongAnswer([]);
     setIsWrong([]);
     if (isWrong.length === 0) {
+      // THIS IS WHERE YOU'RE WORKING KATHRYN
+      sendUserStatUpdates();
       navigate('score-page');
     }
   }; 
