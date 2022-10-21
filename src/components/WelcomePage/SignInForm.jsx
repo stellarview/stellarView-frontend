@@ -6,7 +6,6 @@ import styles from './SignInForm.module.scss';
 
 export default function SignInForm() {
   const { signIn, error } = useAuth();
-
   const [credentials, handleChange] = useForm({
     email: '',
     password: '',
@@ -19,7 +18,7 @@ export default function SignInForm() {
 
   return (
     <form className={styles.SignInForm} onSubmit={handleSubmit}>
-      <h2>Sign Into Your Account</h2>
+      <h2>Sign In</h2>
 
       <InputControl
         placeholder="Email"
@@ -43,11 +42,6 @@ export default function SignInForm() {
 
       <p className="error">{error}</p>
 
-      {/* <nav>
-        <Link className={styles.Link} to={type.switch.link}>
-          {type.switch.prompt}
-        </Link>
-      </nav> */}
     </form>
   );
 }

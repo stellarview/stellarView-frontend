@@ -19,29 +19,29 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchCategoriesAndLevels = async () => {
       const data = await getCategoriesAndLevels();
-      console.log('data', data.data);
       setDisplayCategories(data.data);
     };
     fetchCategoriesAndLevels();
   }, []);
-  console.log('displayCategories', displayCategories);
 
   const handleClick = async (e) => {
-    console.log('e.target.value', e.target.value);
     navigate(`quiz/${e.target.value}`);
   };
 
-  return <div className={styles.Dashboard}>
-
-    {displayCategories.map((button) => (
-      <DashboardButton key={button.id}
-        value={`${button.category}/${button.level}`}
-        onClick={handleClick}>
-          
-        {button.category} Level {button.level}
-      </DashboardButton>
-    ))}
-
-  </div>;
-
+  return (
+    <div className={styles.DashboardContainer}>
+      <h2>select a mission...</h2>
+      <div className={styles.Dashboard}>
+        {displayCategories.map((button) => (
+          <DashboardButton
+            key={button.id}
+            value={`${button.category}/${button.level}`}
+            onClick={handleClick}
+          >
+            {button.category} {button.level}
+          </DashboardButton>
+        ))}
+      </div>
+    </div>
+  );
 }

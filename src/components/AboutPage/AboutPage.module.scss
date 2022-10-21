@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    justify-content: space-between;
     border-radius: 10px;
-    width: 200px;
     margin: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.266);
+    padding: 5px;
     
     img {
         padding: 10px;
-        width: 200px;
+        width: 150px;
         height: 150x;
         border-radius: 50%;
     }
@@ -17,6 +18,7 @@
         width: 60px;
         height: 60px;
         border-radius: 0%;
+        filter: invert(80%);
     }   
     div {
         display: flex;
@@ -25,9 +27,9 @@
     }
 
     p {
-        color: black;
+        color: white;
+        font-weight: 600;
         text-align: center;
-        
     }
 
 }

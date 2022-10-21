@@ -10,7 +10,6 @@ export default function CustomButton({ children, ...rest }) {
   );
 }
 
-// quiz button
 export function DashboardButton({ children, ...rest }) {
   const className = classnames(styles.DashboardButton);
   return (

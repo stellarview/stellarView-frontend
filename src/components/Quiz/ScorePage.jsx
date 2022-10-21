@@ -15,7 +15,7 @@ export default function ScorePage() {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    navigate('dashboard');
+    navigate('/');
   };
 
   return (
