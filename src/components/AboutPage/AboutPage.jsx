@@ -45,7 +45,7 @@ export default function AboutPage() {
 
       <div className={styles.AboutPage}>
         <img src={Kashi}/>
-        <p className={styles.text}>Kashi May Tamang (they/them)</p>
+        <p className={styles.text}>Kashi Maya Tamang (they/them)</p>
         <div>
           <a href="https://github.com/kashitamang"
             target="_blank" rel="noreferrer noopener">

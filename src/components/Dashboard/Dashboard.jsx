@@ -31,17 +31,20 @@ export default function Dashboard() {
     navigate(`quiz/${e.target.value}`);
   };
 
-  return <div className={styles.Dashboard}>
-
-    {displayCategories.map((button) => (
-      <DashboardButton key={button.id}
-        value={`${button.category}/${button.level}`}
-        onClick={handleClick}>
-          
-        {button.category} Level {button.level}
-      </DashboardButton>
-    ))}
-
-  </div>;
-
+  return (
+    <div className={styles.DashboardContainer}>
+      <h2>Select a category to study</h2>
+      <div className={styles.Dashboard}>
+        {displayCategories.map((button) => (
+          <DashboardButton
+            key={button.id}
+            value={`${button.category}/${button.level}`}
+            onClick={handleClick}
+          >
+            {button.category} {button.level}
+          </DashboardButton>
+        ))}
+      </div>
+    </div>
+  );
 }
