@@ -9,5 +9,6 @@ export async function getUserById(id) {
 }
 
 export async function updateCompletedCategories(id, userStatUpdates) {
-  return await patch(`${URL}/${id}`, userStatUpdates);
+  const response = await patch(`${URL}/${id}`, userStatUpdates);
+  return response.body;
 }

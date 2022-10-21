@@ -7,8 +7,6 @@ export default function QuizCard({
   userAnswer, 
   setUserAnswer, 
   correctAnswer,
-  quizQuestions,
-  setQuizQuestions,
   isWrong,
   setIsWrong,
   isWrongAnswer,
@@ -32,7 +30,7 @@ export default function QuizCard({
   
   const handleCompareAnswer = (answer) => {
     console.log('answer', answer, correctAnswer);
-    if (answer.trim() === correctAnswer.trim()) {
+    if (answer === correctAnswer) {
       setIsCorrectAnswer(true);
     } else {
       console.log('isWrong', isWrong);
@@ -59,12 +57,12 @@ export default function QuizCard({
   const buttonBackground = (userAnswer, isCorrectAnswer, buttonAnswer) => {
     if (userAnswer === null) {
       return 'white';
-    } else if (buttonAnswer.trim() === correctAnswer.trim()) {
+    } else if (buttonAnswer === correctAnswer) {
       return 'chartreuse'; 
       /* 
       Execute Confetti Rain!
       */  
-    } else if (userAnswer.trim() === buttonAnswer.trim()) {
+    } else if (userAnswer === buttonAnswer) {
       return 'red';
     } else {
       return 'white';
@@ -107,31 +105,36 @@ refactors, etc.
         {choice_two}
       </QuizButton>
 
-      <QuizButton 
-        value={choice_three} 
-        onClick={(e) => setUserAnswer(e.target.value)}
-        style={{
-          backgroundColor: buttonBackground(
-            userAnswer, isCorrectAnswer, choice_three
-          )
-        }}
-        disabled={userAnswer === null ? false : true}
-      >
-        {choice_three}
-      </QuizButton>
-
-      <QuizButton 
-        value={choice_four} 
-        onClick={(e) => setUserAnswer(e.target.value)}
-        style={{
-          backgroundColor: buttonBackground(
-            userAnswer, isCorrectAnswer, choice_four
-          )
-        }}
-        disabled={userAnswer === null ? false : true}
-      >
-        {choice_four}
-      </QuizButton>
+      { choice_three 
+        ? <QuizButton 
+          value={choice_three} 
+          onClick={(e) => setUserAnswer(e.target.value)}
+          style={{
+            backgroundColor: buttonBackground(
+              userAnswer, isCorrectAnswer, choice_three
+            )
+          }}
+          disabled={userAnswer === null ? false : true}
+        >
+          {choice_three}
+        </QuizButton>
+        : <></>
+      }
+      { choice_four 
+        ? <QuizButton 
+          value={choice_four} 
+          onClick={(e) => setUserAnswer(e.target.value)}
+          style={{
+            backgroundColor: buttonBackground(
+              userAnswer, isCorrectAnswer, choice_four
+            )
+          }}
+          disabled={userAnswer === null ? false : true}
+        >
+          {choice_four}
+        </QuizButton>
+        : <></>
+      }
     </div>
   );
 }

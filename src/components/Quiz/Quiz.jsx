@@ -6,9 +6,10 @@ import { useQuizContext } from '../../state/QuizContext';
 import QuizCard from './QuizCard';
 import styles from './Quiz.module.scss';
 import { updateCompletedCategories } from '../../services/users';
+import { useUser } from '../../state/UserContext';
 
 export default function Quiz() {
-  const { category } = useParams();
+  const { category, level } = useParams();
   const [answersArray, setAnswersArray] = useState([]);
   const [userAnswer, setUserAnswer] = useState(null);
   const { quizQuestions, 
@@ -18,6 +19,7 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [isWrong, setIsWrong] = useState([]);
   const [isWrongAnswer, setIsWrongAnswer] = useState([]);
+  const user = useUser();
 
 
   // const [points, setPoints] = useState(0)
@@ -34,7 +36,7 @@ export default function Quiz() {
   useEffect(() => {
     const fetchQuestions = async () => {
       setCategory(category);
-      const { data } = await getQuiz(category);
+      const { data } = await getQuiz(category, level);
       console.log('data', data);
       setQuizQuestions(data);
       data.map((correct) => {
@@ -68,8 +70,11 @@ export default function Quiz() {
 
   const sendUserStatUpdates = async () => {
     // pinpoint quiz category
-    const statUpdates = { category, total_points: 5 };
-    await updateCompletedCategories(statUpdates);
+    const statUpdates = { completed_categories: category, total_points: 5 };
+
+    console.log('statUpdates', statUpdates);
+    console.log('user', user);
+    await updateCompletedCategories(user.id, statUpdates);
     // send to completed_categories
     // push 5 points onto total_points
   };

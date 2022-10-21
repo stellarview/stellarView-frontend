@@ -16,7 +16,7 @@ export default function ScorePage() {
 
   const handleClick = async () => {
     navigate('dashboard');
-  }
+  };
 
   return (
     <div className={styles.ScorePage}>

@@ -34,7 +34,7 @@ export default function App() {
               <Route element={<Layout />}>
                 <Route index element={<Dashboard />} />
                 <Route path="quiz">
-                  <Route path=":category" element={<Quiz />} />
+                  <Route path=":category/:level" element={<Quiz />} />
                   <Route path="score-page" element={<ScorePage />} />
                 </Route>
                 <Route path="profile" element={<ProfilePage />} />

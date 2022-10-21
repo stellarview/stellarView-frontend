@@ -4,9 +4,11 @@ export default function BadgeList({ category }) {
 
   return (
     <ul className={styles.BadgeList}>
-      <li>{category}</li>
-      <li>{category}</li>
-      <li>{category}</li>
+      {category.map((badge) => (
+        <li key={badge.id}>
+          {badge}
+        </li>
+      ))}
     </ul>
   );
 }
