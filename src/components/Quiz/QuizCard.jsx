@@ -81,10 +81,10 @@ export default function QuizCard({
         {choice_two}
       </QuizButton>
 
-      { choice_three 
+      { choice_three !== ''
         ? <QuizButton 
           value={choice_three} 
-          onClick={(e) => setUserAnswer(e.target.value)}
+          onClick={handleClick}
           style={{
             backgroundColor: buttonBackground(
               userAnswer, isCorrectAnswer, choice_three
@@ -96,10 +96,10 @@ export default function QuizCard({
         </QuizButton>
         : <></>
       }
-      { choice_four 
+      { choice_four !== ''
         ? <QuizButton 
           value={choice_four} 
-          onClick={(e) => setUserAnswer(e.target.value)}
+          onClick={handleClick}
           style={{
             backgroundColor: buttonBackground(
               userAnswer, isCorrectAnswer, choice_four
