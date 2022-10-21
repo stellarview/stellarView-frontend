@@ -29,7 +29,6 @@ export default function SignUpForm() {
       <form className={styles.SignUpForm} onSubmit={handleSubmit}>
         
         <InputControl
-          // label="username"
           name="username"
           type="username"
           placeholder="Username"

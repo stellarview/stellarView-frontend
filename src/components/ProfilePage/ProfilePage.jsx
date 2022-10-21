@@ -23,17 +23,6 @@ export default function ProfilePage() {
 
   return (
     <div className={styles.ProfilePage}>
-      <div className={styles.UserInfo}>
-        <p>
-          {userInfo.username}
-        </p>
-        <p>
-          {userInfo.email}
-        </p>
-        <p>
-          {userInfo.total_points}
-        </p>
-      </div>
       <div className={styles.Badges}>
         <h2>Completed Categories</h2>
         {getBadges(userInfo.completed_categories)}

@@ -26,45 +26,6 @@ export function InputControl({ label, required, ...rest }) {
   );
 }
 
-export function TextAreaControl({ label, required, ...rest }) {
-  return (
-    <FormControl label={label} required={required}>
-      <textarea {...rest} required={required} />
-    </FormControl>
-  );
-}
-
-export function SelectControl({
-  label,
-  required,
-  children,
-  placeholder,
-  ...rest
-}) {
-  return (
-    <FormControl label={label} required={required}>
-      <select {...rest} required={required}>
-        {placeholder && <option disabled>{placeholder}</option>}
-        {children}
-      </select>
-    </FormControl>
-  );
-}
-
-export function CheckboxControl({ legend, required, label, ...rest }) {
-  return (
-    <fieldset className={styles.CheckboxControl}>
-      <legend>
-        <LabelText text={legend} required={required} />
-      </legend>
-      <label>
-        <input type="checkbox" {...rest} required={required} />
-        {label}
-      </label>
-    </fieldset>
-  );
-}
-
 export function FormButton({ children, icon, ...rest }) {
   const className = classnames(styles.FormButton, {
     [styles.Icon]: icon,
