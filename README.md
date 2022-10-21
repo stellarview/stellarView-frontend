@@ -2,8 +2,9 @@
 
 stellarView is a full-stack interactive prep tool to help developers build confidence for their next technical interview. 
 <br>
-[Live Deploy](https://stellarview.netlify.app/welcome)
-[Backend Repository](https://github.com/stellarview/stellarView-backend)
+[Live Deploy](https://stellarview.netlify.app/welcome)  
+[Backend Repository](https://github.com/stellarview/stellarView-backend)  
+[Miro Board](https://miro.com/app/board/uXjVPO8zL6Q=/?share_link_id=58126108903)   
 <br>
 
 ## Build 
@@ -22,82 +23,37 @@ Users can log in to their personalized profile, choose from categories, and prac
 ## Contributors
 
 ### Kat Zaro (she/her)
-[LinkedIn](https://www.linkedin.com/in/katzaro)
-<br>
 [GitHub](https://github.com/kathrynzaro)
 <br>
-
-### Jenna Graham (she/her)
-[LinkedIn](https://www.linkedin.com/in/jenna-lee-graham)
-<br>
-[GitHub](https://github.com/jenna-graham)
-<br>
-
-### Kashi Tamang (they/them)
-[LinkedIn](https://www.linkedin.com/in/kashitamang)
-<br>
-[GitHub](https://github.com/kashitamang)
-<br>
-
-### Aaron Enyetu (he/him)
-[LinkedIn](https://www.linkedin.com/in/aaron-enyetu/)
-<br>
-[GitHub](https://github.com/aaronEnyetu)
-<br>
-
-### Austin Han (he/him)
-[LinkedIn](https://www.linkedin.com/in/austin-han-740a69157/)
-<br>
-[GitHub](https://github.com/austinbhan)
+[LinkedIn](https://www.linkedin.com/in/katzaro)
 <br>
 
 ### Brien Thomas (he/him)
-[LinkedIn](https://www.linkedin.com/in/brien-thomas)
-<br>
 [GitHub](https://github.com/briensthomas)
 <br>
+[LinkedIn](https://www.linkedin.com/in/brien-thomas)
+<br>
 
+### Kashi Tamang (they/them)
+[GitHub](https://github.com/kashitamang)
+<br>
+[LinkedIn](https://www.linkedin.com/in/kashitamang)
+<br>
 
-# stellarView frontend to do list
+### Jenna Graham (she/her)
+[GitHub](https://github.com/jenna-graham)
+<br>
+[LinkedIn](https://www.linkedin.com/in/jenna-lee-graham)
+<br>
 
+### Austin Han (he/him)
+[GitHub](https://github.com/austinbhan)
+<br>
+[LinkedIn](https://www.linkedin.com/in/austin-han-740a69157/)
+<br>
 
-## Components
-
-### Welcome "welcome" (I already have an account vs Get started)
-- Loader
-
-
-### Auth 
-- Signin Form "signin"
-- Signup Form "signup"
-- ProtectedRoute (returns outlet)
-
-
-### Dashboard "" (Home)
-- Categories
-
-
-### Page
-- Layout (wraps everything in App, contains Header and Outlet)
-- Header
-- Footer navigation
-
-### Forms
-- FormControl (InputControl, FormButton, etc)
-
-### Profile "profile"
-- User info (username, "Member since...", avatar, role (student, etc))
-- Badges the user has earned via completing levels
-
-### About "about"
-- about the app
-- about the devs
-- stretch: app stats
-
-### Name TBD
-- Flashcard
-- Questions
-- Choices
-- (header will have progress bar, points, cancel button)
-
-
+### Aaron Enyetu (he/him)
+[GitHub](https://github.com/aaronEnyetu)
+<br>
+[LinkedIn](https://www.linkedin.com/in/aaron-enyetu/)
+<br>
