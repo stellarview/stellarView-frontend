@@ -90,7 +90,7 @@ export default function Quiz() {
     if (isWrong.length === 0) {
       // THIS IS WHERE YOU'RE WORKING KATHRYN
       sendUserStatUpdates();
-      navigate('score-page');
+      navigate('/quiz/score-page');
     }
   }; 
 
